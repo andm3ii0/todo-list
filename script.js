@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 const inputTarefa = document.getElementById('texto-tarefa');
 const botaoAdd = document.getElementById('criar-tarefa');
 const botaoRemove = document.getElementById('apaga-tudo');

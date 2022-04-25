@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <h1>Minha Lista de Tarefas</h1>
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
         <input id="texto-tarefa" type="text">
+        <button id="criar-tarefa" class="botao">Adicionar tarefa</button>
         <section class="lista-botoes">
             <div class="ladoEsquerdo">
                 <ol id="lista-tarefas">
                 </ol>
             </div>
+            <div class="ladoDireito">
+                <button id="mover-cima" class="botao">
+                    <img class="botao-cima" src="img/cima.png" alt="">
+                </button>
+                <button id="mover-baixo" class="botao"><img src="img/baixo.png" alt=""></button>
+                <button id="remover-selecionado" class="botao"><img src="img/x.png" alt=""></button>
+            </div>
         </section>
+        <button id="apaga-tudo" class="botao">Apagar</button>
+        <button id="remover-finalizados" class="botao">Remover finalizados</button>
+        <button id="salvar-tarefas" class="botao">Salvar</button>
+
+
     </header>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-/* eslint-disable func-names */
+/* eslint-disable func-names, sonarjs/no-collapsible-if */
 const inputTarefa = document.getElementById('texto-tarefa');
 const botaoAdd = document.getElementById('criar-tarefa');
 const botaoRemove = document.getElementById('apaga-tudo');
@@ -17,20 +17,22 @@ function removeSelecionado() {
 
 function moveCima() {
   const itemSelecionado = document.querySelector('.selected');
-  const elementoAnterior = itemSelecionado.previousElementSibling;
-  if (elementoAnterior.previousElementSibling === itemSelecionado.parentNode.lastElementChild) {
-    return;
+  if (itemSelecionado !== null) {
+    if (itemSelecionado !== itemSelecionado.parentNode.firstChild) {
+      itemSelecionado.parentNode.insertBefore(itemSelecionado,
+        itemSelecionado.previousElementSibling);
+    }
   }
-  itemSelecionado.parentNode.insertBefore(itemSelecionado, elementoAnterior);
 }
 
 function moveBaixo() {
   const itemSelecionado = document.querySelector('.selected');
-  const proximoElemeto = itemSelecionado.nextElementSibling;
-  if (proximoElemeto.nextElementSibling === itemSelecionado.parentNode.firstElementChild) {
-    return;
+  if (itemSelecionado !== null) {
+    if (itemSelecionado !== itemSelecionado.parentNode.lastChild) {
+      itemSelecionado.parentNode.insertBefore(itemSelecionado, itemSelecionado
+        .nextElementSibling.nextElementSibling);
+    }
   }
-  itemSelecionado.parentNode.insertBefore(itemSelecionado, proximoElemeto.nextElementSibling);
 }
 
 function salvaTarefa() {
